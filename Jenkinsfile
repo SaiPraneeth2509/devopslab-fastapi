@@ -42,7 +42,7 @@ pipeline {
 
         stage('Run New Container') {
             steps {
-                sh "docker run -d --name $CONTAINER_NAME -p $APP_PORT:$APP_PORT $IMAGE_NAME"
+                sh "docker run -d --restart unless-stopped --name $CONTAINER_NAME -p $APP_PORT:$APP_PORT $IMAGE_NAME"
             }
         }
     }
