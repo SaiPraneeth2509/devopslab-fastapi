@@ -8,12 +8,6 @@ pipeline {
     }
 
     stages {
-        stage('Clone Repo') {
-            steps {
-                git 'https://github.com/SaiPraneeth2509/devopslab-fastapi.git'
-            }
-        }
-
         stage('Install Requirements for Testing') {
             steps {
                 sh 'pip install --no-cache-dir -r requirements.txt || true'
